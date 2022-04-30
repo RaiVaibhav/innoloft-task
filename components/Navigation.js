@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { convertImage, toBase64 } from "../utils/utils";
 
 export function Navigation({ logo }) {
@@ -8,7 +9,7 @@ export function Navigation({ logo }) {
 
       <label
         htmlFor="menu-open"
-        className="absolute right-2 bottom-2 shadow-lg rounded-full p-2 bg-gray-100 text-gray-600 md:hidden"
+        className="absolute right-2 bottom-2 shadow-lg rounded-full p-2 bg-gray-100 text-gray-600 md:hidden h-fit"
         data-dev-hint="floating action button"
       >
         <svg
@@ -31,17 +32,21 @@ export function Navigation({ logo }) {
         className="bg-gray-900 text-gray-100 flex justify-between md:hidden"
         data-dev-hint="mobile menu bar"
       >
-        <Image
-          placeholder="blur"
-          height="50"
-          width="50"
-          src={logo}
-          className="mb-3 rounded-full shadow-lg"
-          alt="User profile"
-          blurDataURL={`data:image/svg+xml;base64,${toBase64(
-            convertImage(50, 50)
-          )}`}
-        />
+        <Link href="/">
+          <a>
+            <Image
+              placeholder="blur"
+              height="50"
+              width="100"
+              src={logo}
+              className="mb-3 rounded-full shadow-lg"
+              alt="User profile"
+              blurDataURL={`data:image/svg+xml;base64,${toBase64(
+                convertImage(50, 50)
+              )}`}
+            />
+          </a>
+        </Link>
         <label
           htmlFor="menu-open"
           id="mobile-menu-button"
@@ -89,18 +94,21 @@ export function Navigation({ logo }) {
           className="flex flex-col space-y-6"
           data-dev-hint="optional div for having an extra footer navigation"
         >
-          <Image
-            placeholder="blur"
-            height="25"
-            width="25"
-            src={logo}
-            className="mb-3 rounded-full shadow-lg"
-            alt="User profile"
-            blurDataURL={`data:image/svg+xml;base64,${toBase64(
-              convertImage(25, 25)
-            )}`}
-          />
-
+          <Link href="/" className="">
+            <a className="w-full flex items-center justify-center">
+              <Image
+                placeholder="blur"
+                height="100"
+                width="200"
+                src={logo}
+                className="mb-3 rounded-full shadow-lg"
+                alt="User profile"
+                blurDataURL={`data:image/svg+xml;base64,${toBase64(
+                  convertImage(200, 100)
+                )}`}
+              />
+            </a>
+          </Link>
           <nav data-dev-hint="main navigation">
             <a
               href="#"
@@ -126,8 +134,6 @@ export function Navigation({ logo }) {
             </a>
           </nav>
         </div>
-
-
       </aside>
     </>
   );

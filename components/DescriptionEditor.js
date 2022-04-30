@@ -77,8 +77,8 @@ export default function DescriptionEditor({
         editorState={editorState}
         onEditorStateChange={onStateChange}
         placeholder="Write something!"
-        toolbarClassName={disabled ? "opacity-50 bg-gray-300" : ""}
-        wrapperClassName={disabled ? "opacity-50 bg-gray-300" : ""}
+        toolbarClassName={disabled ? "opacity-50 bg-gray-300 cursor-not-allowed" : ""}
+        wrapperClassName={disabled ? "opacity-50 bg-gray-300 rounded-2xl cursor-not-allowed" : ""}
       />
     </div>
   );
