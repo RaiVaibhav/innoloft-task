@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  #sidebar {
+    --tw-translate-x: -100%;
+  }
+  #menu-close-icon {
+      display: none;
+  }
+
+  #menu-open:checked ~ #sidebar {
+      --tw-translate-x: 0;
+  }
+  #menu-open:checked ~ * #mobile-menu-button {
+      background-color: rgba(31, 41, 55, var(--tw-bg-opacity));
+  }
+  #menu-open:checked ~ * #menu-open-icon {
+      display: none;
+  }
+  #menu-open:checked ~ * #menu-close-icon {
+      display: block;
+  }
+
+  @media (min-width: 768px) {
+      #sidebar {
+          --tw-translate-x: 0;
+      }
+  }
+  .grid-1 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+  .grid-1-lg {
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
+  .grid-3-lg {
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
+  .grid-rows-min-content-3 {
+    grid-template-rows: min-content min-content min-content;
+  }
+  .grid-cols-2-double {
+    grid-template-columns: 2fr 1fr;
+  }
+  .grid-row-2-fit {
+    grid-template-rows: min-content 1fr;
+  }
+}
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
